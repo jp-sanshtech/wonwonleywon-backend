@@ -39,7 +39,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(
   cors({
-    origin: ["https://wonwonleywon.com", "https://www.wonwonleywon.com", "http://localhost:3000"],
+    origin: ["https://wonwonleywon.com", "https://www.wonwonleywon.com", "http://localhost:3000" , 'https://wonwonleywon-backend.onrender.com'],
     credentials: true,
   })
 );
