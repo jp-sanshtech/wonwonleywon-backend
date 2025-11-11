@@ -1,52 +1,31 @@
-// Update with your config settings.
+// knexfile.js
+
+require('dotenv').config();
 
 module.exports = {
-
   development: {
     client: "pg",
     connection: {
       database: "wonwonleywon",
-      user:     'postgres',
-      password: 'Temp4now'
+      user: "postgres",
+      password: "Temp4now"
     },
     migrations: {
       directory: "./db/migrations"
     },
     seeds: {
-      directory: './seeds'
+      directory: "./seeds"
+    }
+  },
+
+  production: {
+    client: "pg",
+    connection: process.env.DATABASE_URL,
+    migrations: {
+      directory: "./db/migrations"
+    },
+    seeds: {
+      directory: "./seeds"
+    }
   }
-  }
-
-  // staging: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'my_db',
-  //     user:     'username',
-  //     password: 'password'
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10
-  //   },
-  //   migrations: {
-  //     tableName: 'knex_migrations'
-  //   }
-  // },
-
-  // production: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'my_db',
-  //     user:     'username',
-  //     password: 'password'
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10
-  //   },
-  //   migrations: {
-  //     tableName: 'knex_migrations'
-  //   }
-  // }
-
 };
